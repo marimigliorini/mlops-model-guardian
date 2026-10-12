@@ -1,0 +1,38 @@
+{
+  "MOD-CREDIT-SCORE-V2": {
+    "2026-09": {
+      "target_name": "bad_rate_90d",
+      "days_elapsed": 90,
+      "required_maturation_days": 90,
+      "maturation_percentage": 100.0,
+      "is_fully_matured": true
+    }
+  },
+  "MOD-FRAUD-BEHAVIOR-V1": {
+    "2026-09": {
+      "target_name": "is_confirmed_fraud_30d",
+      "days_elapsed": 30,
+      "required_maturation_days": 30,
+      "maturation_percentage": 100.0,
+      "is_fully_matured": true
+    }
+  },
+  "MOD-PROPENSIDADE-INVEST-V3": {
+    "2026-09": {
+      "target_name": "conversion_30d",
+      "days_elapsed": 30,
+      "required_maturation_days": 30,
+      "maturation_percentage": 100.0,
+      "is_fully_matured": true
+    }
+  },
+  "MOD-EMPRESTIMO-PESSOAL-V4": {
+    "2026-09": {
+      "target_name": "bad_rate_90d",
+      "days_elapsed": 28,
+      "required_maturation_days": 90,
+      "maturation_percentage": 31.1,
+      "is_fully_matured": false
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "MOD-CREDIT-SCORE-V2": {
+    "model_name": "Modelo de Credit Score PF V2",
+    "active_version": "v2.1.0",
+    "last_retrain_date": "2025-11-15",
+    "training_window": "2024-06 a 2025-10",
+    "model_owner": "Cientista de Dados: Maria Silva (maria.silva@banco.com)",
+    "fallback_rule": "score_heuristico_politica_v1"
+  },
+  "MOD-FRAUD-BEHAVIOR-V1": {
+    "model_name": "Modelo de Comportamento Suspeito de Fraude V1",
+    "active_version": "v1.4.0",
+    "last_retrain_date": "2025-05-10",
+    "training_window": "2024-01 a 2025-04",
+    "model_owner": "Cientista de Dados: Carlos Eduardo (carlos.eduardo@banco.com)",
+    "fallback_rule": "regra_trava_transacional_limite_fixo"
+  },
+  "MOD-PROPENSIDADE-INVEST-V3": {
+    "model_name": "Modelo de Propensão a Investimentos V3",
+    "active_version": "v3.0.0",
+    "last_retrain_date": "2025-08-20",
+    "training_window": "2024-08 a 2025-07",
+    "model_owner": "Cientista de Dados: Ana Beatriz (ana.beatriz@banco.com)",
+    "fallback_rule": "recomendacao_top_produtos_populares"
+  },
+  "MOD-EMPRESTIMO-PESSOAL-V4": {
+    "model_name": "Modelo de Empréstimo Pessoal Sem Garantia V4",
+    "active_version": "v4.2.0",
+    "last_retrain_date": "2026-02-10",
+    "training_window": "2025-01 a 2026-01",
+    "model_owner": "Cientista de Dados: Roberto Santos (roberto.santos@banco.com)",
+    "fallback_rule": "tabela_matriz_politica_credito_padrao"
+  }
+}

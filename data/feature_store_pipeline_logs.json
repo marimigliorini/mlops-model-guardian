@@ -1,0 +1,44 @@
+{
+  "MOD-CREDIT-SCORE-V2": {
+    "2026-09": {
+      "pipeline_name": "dag_ingestao_feature_store_credito_v3.1",
+      "execution_date": "2026-09-01T03:00:00Z",
+      "pipeline_status": "WARNING",
+      "records_processed": 450000,
+      "schema_changes": [
+        "renda_presumida column type changed to string in source ETL"
+      ],
+      "error_log": "ALERTA ETL: 82% de valores nulos detectados na coluna 'renda_presumida' após atualização do script de ingestão no Airflow. Tabela de origem 'tb_cadastral_raw' enviou campo vazio."
+    }
+  },
+  "MOD-FRAUD-BEHAVIOR-V1": {
+    "2026-09": {
+      "pipeline_name": "dag_feature_store_fraude_realtime",
+      "execution_date": "2026-09-01T02:00:00Z",
+      "pipeline_status": "SUCCESS",
+      "records_processed": 1200000,
+      "schema_changes": [],
+      "error_log": null
+    }
+  },
+  "MOD-PROPENSIDADE-INVEST-V3": {
+    "2026-09": {
+      "pipeline_name": "dag_feature_store_investimentos_daily",
+      "execution_date": "2026-09-01T04:00:00Z",
+      "pipeline_status": "SUCCESS",
+      "records_processed": 300000,
+      "schema_changes": [],
+      "error_log": null
+    }
+  },
+  "MOD-EMPRESTIMO-PESSOAL-V4": {
+    "2026-09": {
+      "pipeline_name": "dag_feature_store_emprestimo_pessoal",
+      "execution_date": "2026-09-01T05:00:00Z",
+      "pipeline_status": "SUCCESS",
+      "records_processed": 85000,
+      "schema_changes": [],
+      "error_log": null
+    }
+  }
+}

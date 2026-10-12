@@ -1,0 +1,46 @@
+[
+  {
+    "alert_id": "ALT-2026-001",
+    "model_id": "MOD-CREDIT-SCORE-V2",
+    "trigger_type": "ALERTA_CRITICO",
+    "metric_violated": "NULL_RATE_EXCEEDED",
+    "current_value": 0.82,
+    "baseline_value": 0.02,
+    "safra_ref": "2026-09",
+    "timestamp": "2026-10-01T08:30:00Z",
+    "description": "Alerta de farol vermelho: Taxa de nulos na feature 'renda_presumida' atingiu 82% na safra 2026-09."
+  },
+  {
+    "alert_id": "ALT-2026-002",
+    "model_id": "MOD-FRAUD-BEHAVIOR-V1",
+    "trigger_type": "ALERTA_CRITICO",
+    "metric_violated": "KS_DROP",
+    "current_value": 22.4,
+    "baseline_value": 41.0,
+    "safra_ref": "2026-09",
+    "timestamp": "2026-10-02T09:15:00Z",
+    "description": "Alerta de farol vermelho: Queda acentuada no KS do modelo de fraude de 41.0 para 22.4."
+  },
+  {
+    "alert_id": "ALT-2026-003",
+    "model_id": "MOD-PROPENSIDADE-INVEST-V3",
+    "trigger_type": "AVALIACAO_PREVENTIVA",
+    "metric_violated": "PSI_TREND_RISING",
+    "current_value": 0.27,
+    "baseline_value": 0.1,
+    "safra_ref": "2026-09",
+    "timestamp": "2026-10-05T14:00:00Z",
+    "description": "Monitoramento preventivo safra a safra: PSI com subida contínua ao longo de 3 safras (0.12 -> 0.19 -> 0.27)."
+  },
+  {
+    "alert_id": "ALT-2026-004",
+    "model_id": "MOD-EMPRESTIMO-PESSOAL-V4",
+    "trigger_type": "ALERTA_CRITICO",
+    "metric_violated": "KS_DROP",
+    "current_value": 19.5,
+    "baseline_value": 38.0,
+    "safra_ref": "2026-09",
+    "timestamp": "2026-10-08T11:45:00Z",
+    "description": "Alerta automatizado: Queda no KS para 19.5 na safra recente de Empréstimo Pessoal."
+  }
+]

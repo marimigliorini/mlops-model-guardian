@@ -1,0 +1,43 @@
+PLAYBOOK DE GOVERNANÇA E RESOLUÇÃO DE INCIDENTES DE MLOPS
+Instituição: Banco FinTech S.A. | Diretoria de Ciência de Dados e MLOps
+Documento: SOP-MLOPS-2026-V3 | Classificação: Uso Interno
+
+1. VISÃO GERAL E OBJETIVO
+Este manual estabelece os procedimentos operacionais padrão (SOP) para investigação de causa raiz,
+triagem de incidentes e definição de planos de ação diante de alertas de monitoramento de modelos
+de Machine Learning em produção.
+
+2. DIRETRIZES DE TRIAGEM POR CAUSA RAIZ
+
+2.1. FALHA DE INGESTÃO E ENGENHARIA DE DADOS (ETL / FEATURE STORE)
+- Regra SOP-01: Se a taxa de valores nulos (null_rate) em uma ou mais features estratégicas exceder 15.0%,
+ou se houver erro registrado nos logs da pipeline de dados (Airflow/Databricks), o incidente deve ser
+classificado como "Falha de Ingestão de Dados (Bug de ETL)".
+- Ação Exigida: Não solicitar retreino de modelo. Notificar imediatamente a equipe de Engenharia de Dados
+(data_engineering@banco.com) com o log do erro e aplicar a regra de fallback cadastrada no Model Registry
+se a severidade for crítica.
+
+2.2. MUDANÇA DE COMPORTAMENTO DO CONTEXTO (CONCEPT DRIFT / DATA DRIFT)
+- Regra SOP-02: Se o Population Stability Index (PSI) das features ativas ultrapassar 0.25 (ou PSI Global > 0.25)
+E a pipeline de dados estiver com status "SUCCESS" sem anomalias de nulos, o incidente deve ser classificado
+como "Concept Drift Real (Mudança de Perfil)".
+- Ação Exigida: Solicitar retreino emergencial do modelo utilizando a janela de dados das últimas 6 safras.
+Acionar o Cientista de Dados responsável (Model Owner) e registrar ticket no Jira MLOps.
+
+2.3. MONITORAMENTO PREVENTIVO E TENDÊNCIA SAFRA A SAFRA
+- Regra SOP-03: Em avaliações preventivas periódicas, caso seja identificada uma elevação progressiva do PSI
+ao longo de 3 safras consecutivas (ex: 0.12 -> 0.19 -> 0.27), mesmo que o KS ainda não tenha atingido a faixa
+vermelha, classificar como "Deterioração Gradual de Safra".
+- Ação Exigida: Emitir parecer de Re-calibração Preventiva de Score e agendar retreino ordinário no próximo ciclo de sprint.
+
+2.4. AVALIAÇÃO DE MATURAÇÃO DO TARGET (SABOTAGEM DE JANELA / FALSO ALERTA)
+- Regra SOP-04: Para modelos de Concessão de Crédito e Risco, a variável resposta (target) exige obrigatoriamente
+uma janela mínima de maturação de 90 dias (bad_rate_90d). Se o atributo 'is_fully_matured' for False ou
+'days_elapsed' < 90 dias, a queda aparente de performance deve ser classificada como "Falso Alerta por Safra Imatura".
+- Ação Exigida: Encerrar o incidente sem alteração no modelo ou pipeline. Agendar reavaliação automática após
+o cumprimento integral dos 90 dias de maturação.
+
+3. HIERARQUIA DE ALÇADAS DE APROVAÇÃO
+- Retreino Emergencial em Produção: Requer parecer fundamentado do MLOps Guardian + aprovação do Lead Data Scientist.
+- Rollback para Regra Fallback: Requer aprovação do Gerente de Risco Operacional.
+- Correção de ETL/Pipeline: Autonomia técnica da Engenharia de Dados.

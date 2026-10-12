@@ -1,0 +1,101 @@
+{
+  "MOD-CREDIT-SCORE-V2": {
+    "2026-09": {
+      "performance_metrics": {
+        "ks": 18.2,
+        "auc": 0.58,
+        "gini": 0.16
+      },
+      "missing_rates": {
+        "renda_presumida": 0.82,
+        "score_serasa": 0.01,
+        "idade": 0.0,
+        "comprometimento_renda": 0.02
+      },
+      "feature_drift": {
+        "renda_presumida": 0.45,
+        "score_serasa": 0.03,
+        "idade": 0.01
+      }
+    }
+  },
+  "MOD-FRAUD-BEHAVIOR-V1": {
+    "2026-09": {
+      "performance_metrics": {
+        "ks": 22.4,
+        "auc": 0.63,
+        "gini": 0.26
+      },
+      "missing_rates": {
+        "qtd_transacoes_24h": 0.0,
+        "valor_transacao": 0.0,
+        "geolocalizacao_risk": 0.01
+      },
+      "feature_drift": {
+        "qtd_transacoes_24h": 0.38,
+        "valor_transacao": 0.29,
+        "geolocalizacao_risk": 0.31
+      }
+    }
+  },
+  "MOD-PROPENSIDADE-INVEST-V3": {
+    "2026-07": {
+      "performance_metrics": {
+        "ks": 39.1,
+        "auc": 0.78
+      },
+      "missing_rates": {
+        "saldo_investido": 0.0,
+        "perfil_risco": 0.0
+      },
+      "feature_drift": {
+        "saldo_investido": 0.12,
+        "perfil_risco": 0.08
+      }
+    },
+    "2026-08": {
+      "performance_metrics": {
+        "ks": 36.5,
+        "auc": 0.75
+      },
+      "missing_rates": {
+        "saldo_investido": 0.0,
+        "perfil_risco": 0.0
+      },
+      "feature_drift": {
+        "saldo_investido": 0.19,
+        "perfil_risco": 0.14
+      }
+    },
+    "2026-09": {
+      "performance_metrics": {
+        "ks": 34.0,
+        "auc": 0.72
+      },
+      "missing_rates": {
+        "saldo_investido": 0.0,
+        "perfil_risco": 0.0
+      },
+      "feature_drift": {
+        "saldo_investido": 0.27,
+        "perfil_risco": 0.21
+      }
+    }
+  },
+  "MOD-EMPRESTIMO-PESSOAL-V4": {
+    "2026-09": {
+      "performance_metrics": {
+        "ks": 19.5,
+        "auc": 0.59
+      },
+      "missing_rates": {
+        "renda_comprovada": 0.01,
+        "historico_atraso": 0.0
+      },
+      "feature_drift": {
+        "renda_comprovada": 0.05,
+        "historico_atraso": 0.04
+      }
+    }
+  }
+}
